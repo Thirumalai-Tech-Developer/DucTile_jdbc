@@ -1,4 +1,7 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Create {
@@ -6,6 +9,7 @@ public class Create {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         System.out.print("Enter table name : ");
+        App ap = new App();
         sb.append(sc.nextLine());
         try {
             System.out.println("How many coloums you want to add");
@@ -28,6 +32,9 @@ public class Create {
         }
         String name = sb.toString();
         String sql = String.format("create table %s", name );
+        Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.executeUpdate();
         System.out.println(sql);
         System.out.println(sb.toString());
     }

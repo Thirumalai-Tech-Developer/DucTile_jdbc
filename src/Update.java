@@ -1,10 +1,14 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Update {
     public static void Update(String[] args) {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
+        App ap = new App();
         try {
             System.out.println("Which column want to change");
             String a = sc.nextLine();
@@ -18,6 +22,9 @@ public class Update {
             sb.append(a).append("=").append("'").append(a1).append("' ");
             sb.append("where ").append(b).append("=").append("'").append(b1).append("'");
             String sql = sb.toString();
+            Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
         }
