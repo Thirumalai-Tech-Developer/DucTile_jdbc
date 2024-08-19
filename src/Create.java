@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class Create {
-    public static void main(String[] args) {
+    public static void Create(String[] args) {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         System.out.print("Enter table name : ");

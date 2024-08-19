@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class Update {
-    public static void main(String[] args) {
+    public static void Update(String[] args) {
         Scanner sc = new Scanner(System.in);
         try {
             System.out.println("Which column want to change");

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Delete {
-    public static void main(String[] args) {
+    public static void Delete(String[] args) {
         Scanner sc = new Scanner(System.in);
         try {
             System.out.print("Which Table did u want to delete??  " );
