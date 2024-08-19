@@ -1,7 +1,4 @@
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Create {
@@ -27,15 +24,13 @@ public class Create {
                 if (i != n) sb.append(",");
             }
             sb.append(")");
+            String name = sb.toString();
+            String sql = String.format("create table %s", name );
+            Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
+            PreparedStatement pst = con.prepareStatement(sql);
+        pst.executeUpdate();
         } catch (Exception s) {
             System.out.println(s);
         }
-        String name = sb.toString();
-        String sql = String.format("create table %s", name );
-        Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
-        PreparedStatement pst = con.prepareStatement(sql);
-        pst.executeUpdate();
-        System.out.println(sql);
-        System.out.println(sb.toString());
     }
 }
