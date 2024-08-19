@@ -3,4 +3,9 @@ public class App {
         System.out.println("What operation did want perform \n 1.Create Table \n 2.Update Table \n 3.Insert Value in Table \n 4.Delete the Table");
         Create create = new Create();
     }
+    public static void connectionDetails(){
+        String url = "jdbc:mysql://localhost:3306/gt";
+        String user = "root";
+        String pass = "gtking"; 
+    }
 }
