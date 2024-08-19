@@ -12,7 +12,7 @@ public class Delete {
         try {
             System.out.print("Which Table did u want to delete??  " );
             String a = sc.nextLine();
-            sb.append("'").append(a).append("'");
+            sb.append(a);
             Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
             PreparedStatement pst = con.prepareStatement(sb.toString());
             pst.executeUpdate();

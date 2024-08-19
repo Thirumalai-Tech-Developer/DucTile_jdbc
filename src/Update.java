@@ -10,6 +10,8 @@ public class Update {
         StringBuilder sb = new StringBuilder();
         App ap = new App();
         try {
+            System.out.println("Enter table name");
+            String tname = sc.nextLine();
             System.out.println("Which column want to change");
             String a = sc.nextLine();
             System.out.printf("Enter new %s ",a);
@@ -18,12 +20,14 @@ public class Update {
             String b = sc.nextLine();
             System.out.printf("Enter reference %s ",b);
             String b1 = sc.nextLine();
-            sb.append("update profile set ");
-            sb.append(a).append("=").append("'").append(a1).append("' ");
-            sb.append("where ").append(b).append("=").append("'").append(b1).append("'");
+            sb.append("update ").append(tname).append(" set ");
+            sb.append(a).append("=").append("'").append(a1).append("'");
+            sb.append(" where ").append(b).append("=").append(b1);
             String sql = sb.toString();
+            System.out.println(sql);
             Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
             PreparedStatement pst = con.prepareStatement(sql);
+
             pst.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
