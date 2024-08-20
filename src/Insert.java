@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Insert {
-    public static void Insert(String[] args) {
+    public static void Insert() {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         App ap = new App();
@@ -44,6 +44,7 @@ public class Insert {
             System.out.println(sb.toString());
             PreparedStatement pst = con.prepareStatement(sb.toString());
             pst.executeUpdate();
+            con.close();
         } catch (Exception e) {
             System.out.println(e);
         }

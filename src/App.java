@@ -12,19 +12,19 @@ public class App {
         switch(a){
             case 1:
                 Create cre = new Create();
-                cre.Create(args);
+                cre.Create();
                 break;
             case 2:
                 Update upd = new Update();
-                upd.Update(args);
+                upd.Update();
                 break;
             case 3:
                 Insert ins = new Insert();
-                ins.Insert(args);
+                ins.Insert();
                 break;
             case 4:
                 Delete del = new Delete();
-                del.Delete(args);
+                del.Delete();
                 break;
         }
     }
