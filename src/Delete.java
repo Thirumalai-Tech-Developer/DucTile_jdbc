@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Delete {
-    public void main() {
+    public void Delete() {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         System.out.println("Delete Table or Column \n 1.Table \n 2.Coloumn");
