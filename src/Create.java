@@ -18,11 +18,11 @@ public class Create {
             sc.nextLine();
             sb.append("(");
             for (int i = 1; i <= n ; i++){
-                System.out.print("Coloumn_"+i+" name");
+                System.out.print("Coloumn_"+i+" name ");
                 sb.append(sc.nextLine());
                 sb.append(" ");
                 System.out.println();
-                System.out.print("Coloumn_"+i+" Datatype");
+                System.out.print("Coloumn_"+i+" Datatype ");
                 sb.append(sc.nextLine()).append(" not null");
                 System.out.println();
                 if (i != n) sb.append(",");

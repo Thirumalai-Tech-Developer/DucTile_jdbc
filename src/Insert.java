@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Insert {
-    public void Insert() {
+    public static void Insert() {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         App ap = new App();
@@ -20,9 +20,9 @@ public class Insert {
 
             Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
             Statement st = con.createStatement();
-            String sql = String.format("SELECT COUNT(*) AS total FROM %s",tname);
+            String sql = String.format("SELECT * FROM %s",tname);
             ResultSet rs = st.executeQuery(sql);
-            int count = 1;
+            int count = 0;
             while(rs.next()){
                 count++;
             }
@@ -31,8 +31,8 @@ public class Insert {
             sc.nextLine();
             for (int i = 1; i <= n; i++){
                 sb.append("(");
-                for(int j =1; j <= count ; j++){
-                    System.out.printf("column_%d value ",j);
+                for(int j = 1; j <= count ; j++){
+                    System.out.printf("column_%d value ",i);
                     sb.append("'").append(sc.nextLine()).append("'");
                     if (j != count){
                         sb.append(",");
@@ -42,6 +42,7 @@ public class Insert {
                     sb.append("),");
                 }else sb.append(");");
             }
+            System.out.println(sb.toString());
             PreparedStatement pst = con.prepareStatement(sb.toString());
             pst.executeUpdate();
             con.close();
