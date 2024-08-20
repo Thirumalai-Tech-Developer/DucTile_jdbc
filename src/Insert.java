@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -31,7 +32,7 @@ public class Insert {
             for (int i = 1; i <= n; i++){
                 sb.append("(");
                 for(int j =1; j <= count ; j++){
-                    System.out.printf("column%d value ",j);
+                    System.out.printf("column_%d value ",j);
                     sb.append("'").append(sc.nextLine()).append("'");
                     if (j != count){
                         sb.append(",");
@@ -41,12 +42,12 @@ public class Insert {
                     sb.append("),");
                 }else sb.append(");");
             }
-            System.out.println(sb.toString());
             PreparedStatement pst = con.prepareStatement(sb.toString());
             pst.executeUpdate();
             con.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
+        sc.close();
     }
 }

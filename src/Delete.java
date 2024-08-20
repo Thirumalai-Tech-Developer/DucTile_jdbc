@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Delete {
@@ -16,7 +17,7 @@ public class Delete {
             Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
             PreparedStatement pst = con.prepareStatement(sb.toString());
             pst.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         sc.close();

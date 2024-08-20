@@ -24,7 +24,6 @@ public class Update {
             sb.append(a).append("=").append("'").append(a1).append("'");
             sb.append(" where ").append(b).append("=").append(b1);
             String sql = sb.toString();
-            System.out.println(sql);
             Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
             PreparedStatement pst = con.prepareStatement(sql);
 

@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Create {
@@ -17,11 +18,11 @@ public class Create {
             sc.nextLine();
             sb.append("(");
             for (int i = 1; i <= n ; i++){
-                System.out.print("Coloumn_name"+i+" ");
+                System.out.print("Coloumn_"+i+" name");
                 sb.append(sc.nextLine());
                 sb.append(" ");
                 System.out.println();
-                System.out.print("Coloumn_Datatype"+i+" ");
+                System.out.print("Coloumn_"+i+" Datatype");
                 sb.append(sc.nextLine()).append(" not null");
                 System.out.println();
                 if (i != n) sb.append(",");
@@ -32,7 +33,7 @@ public class Create {
             Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
             PreparedStatement pst = con.prepareStatement(sql);
         pst.executeUpdate();
-        } catch (Exception s) {
+        } catch (SQLException s) {
             System.out.println(s);
         }
     }
