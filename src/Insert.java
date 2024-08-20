@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Insert {
-    public static void Insert() {
+    public void Insert() {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         App ap = new App();
