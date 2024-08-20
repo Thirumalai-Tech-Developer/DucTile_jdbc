@@ -10,22 +10,23 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         switch(a){
-            case 1:
+            case 1 -> {
                 Create cre = new Create();
                 cre.Create();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 Update upd = new Update();
                 upd.Update();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 Insert ins = new Insert();
                 ins.Insert();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 Delete del = new Delete();
                 del.Delete();
-                break;
+            }
         }
+        sc.close();
     }
 }

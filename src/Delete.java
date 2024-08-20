@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Delete {
-    public static void Delete() {
+    public void Delete() {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         sb.append("drop table ");
@@ -19,5 +19,6 @@ public class Delete {
         } catch (Exception e) {
             System.out.println(e);
         }
+        sc.close();
     }
 }

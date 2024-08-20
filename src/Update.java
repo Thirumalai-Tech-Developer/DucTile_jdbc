@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Update {
-    public static void Update() {
+    public void Update() {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         App ap = new App();
