@@ -20,14 +20,19 @@ public class Update {
             String b = sc.nextLine();
             System.out.printf("Enter reference %s ",b);
             String b1 = sc.nextLine();
+
+
             sb.append("update ").append(tname).append(" set ");
             sb.append(a).append("=").append("'").append(a1).append("'");
             sb.append(" where ").append(b).append("=").append(b1);
+
+
             String sql = sb.toString();
             Connection con = DriverManager.getConnection(ap.URL,ap.USER,ap.PASS);
             PreparedStatement pst = con.prepareStatement(sql);
-
             pst.executeUpdate();
+
+            
         } catch (Exception e) {
             System.out.println(e);
         }

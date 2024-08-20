@@ -22,6 +22,8 @@ public class Create {
                 sb.append(sc.nextLine());
                 sb.append(" ");
                 System.out.println();
+
+                
                 System.out.print("Coloumn_"+i+" Datatype ");
                 sb.append(sc.nextLine()).append(" not null");
                 System.out.println();
